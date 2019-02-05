@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head><meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+
+</h:head>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+		<h1>Lsitar Historia</h1>
+		<p><a href="index.xhtml">Inicio</a></p>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Content -->
+			<section id="content" class="main"> <span
+				class="image main"><img src="images/otorongo_Lugares.jpg"
+				alt="" /></span> <h:form>
+				<h:dataTable var="_historia" value="#{historiaBean.historias}"
+					styleClass="simpletablestyle">
+					<h:column>
+						<f:facet name="header">Codigo</f:facet>
+                #{_historia.codigo}
+            </h:column>
+					<h:column>
+						<f:facet name="header">Nombre</f:facet>
+                #{_historia.nombre}
+            </h:column>
+					<h:column>
+						<f:facet name="header">Descripcion</f:facet>
+                #{_historia.descripcion}
+            </h:column>
+      
+					<h:column>
+						<f:facet name="header">Acciones</f:facet>
+						<h:commandButton action="#{historiaBean.eliminar(_historia.codigo)}"
+							value="Eliminar" />
+						<h:commandButton action="#{historiaBean.editar(_historia)}"
+							value="Editar" />
+					</h:column>
+
+					<f:facet name="footer">
+
+					</f:facet>
+				</h:dataTable>
+
+				<h:commandButton value="Crear historia" action="Crear_Historia" />
+
+			</h:form>
+			</section>
+							
+					</div>
+					</div>
+					
+</body> 
+</html>
