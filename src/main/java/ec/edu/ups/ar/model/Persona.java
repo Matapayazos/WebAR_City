@@ -15,17 +15,19 @@ public class Persona {
 	@Id
 	private String  cedula;
 	
-	@NotNull
+	
 	private String nombre;
 	
-	@NotNull
+	
 	private String apellido;
 	
-	@Size(max=100, min=20)
+	
 	private String Direccion;
 	
-	@Email
+	
 	private String correo;
+	
+	private String comentario;
 	
 	public String getCedula() {
 		return cedula;
@@ -57,5 +59,12 @@ public class Persona {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+	public String getComentario() {
+		return comentario;
+	}
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
+	}
+	
 	
 }

@@ -30,7 +30,7 @@ public class AdministradorBean {
 				administrador = admB.login(usuario, clave);
 				System.out.println("Se logeo al sistema");
 				System.out.println("CODIGOOOOOOO>>> " + administrador.getId_cliente());
-				return "principal?faces-redirect=true&id=" + administrador.getId_cliente();
+				return "administracion.xhtml";
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

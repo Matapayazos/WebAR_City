@@ -18,18 +18,19 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Lugar {
 	@Id
+	@GeneratedValue
 	private String codigo;
 
-	@NotNull
+	
 	private String nombre;
 
-	@NotNull
+	
 	private double latitud;
 
-	@NotNull
+	
 	private double longitud;
 
-	@NotNull
+	
 	private String Descripcion;
 	
 	@OneToMany(cascade= {CascadeType.ALL}, fetch=FetchType.EAGER)

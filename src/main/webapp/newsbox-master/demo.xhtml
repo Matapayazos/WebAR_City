@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="index.xhtml">
+
+
+
+
+<ui:define name="FHistorias"> 
+
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{historiaBean.id}"/>
+        <f:viewAction action="#{historiaBean.loadData()}" />
+ 	</f:metadata>
+</h:head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+		<h1>Crear Historias</h1>
+		<p><a href="index.xhtml">Inicio</a></p>
+		</header>
+		
+		<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/otorongo_Lugares.jpg" alt="" /></span>
+								<h:form>
+								Codigo<h:inputText value="#{historiaBean.newHistoria.codigo}" id="codigotxt"/><br/>
+								<h:message for="codigotxt"/>
+								Nombre: <h:inputText value="#{historiaBean.newHistoria.nombre}" id="Nombretxt" /><br/>
+								<h:message for="Nombretxt"/>
+								Drecipcion<h:inputText value="#{historiaBean.newHistoria.descripcion}" id="descripciontxt" /><br/>
+								<h:message for="descripciontxt"/>
+								<h:commandButton action="#{historiaBean.guardar()}" value="Guardar Historia" />
+								<h:messages globalOnly="true"/>
+								</h:form>
+							</section>
+							
+					</div>
+					</div>
+</body> 
+
+
+
+</ui:define>
+
+
+<ui:define name="FItems"> 
+
+<h:head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+		<f:metadata>
+		<f:viewParam id="id" name="id" value="#{itemBean.id}" />
+		<f:viewAction action="#{itemBean.loadData()}" />
+	</f:metadata>
+</h:head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+		<h1>Crear Item</h1>
+		</header>
+		
+		<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/private-half-day-city.jpg" alt="" /></span>
+								<h:form>
+								Codigo<h:inputText value="#{itemBean.newItem.codigo}"  id="codtxt"/><br/>
+								<h2><h:message for="codtxt" /></h2>
+								Nombre: <h:inputText value="#{itemBean.newItem.nombre}" id="nomtxt" /><br/>
+								<h2><h:message for="nomtxt" /></h2>
+								Drecipcion<h:inputText value="#{itemBean.newItem.descripcion}" id="destxt"/><br/>
+								<h2><h:message for="destxt" /></h2>
+								
+								<h:commandButton action="#{itemBean.guardar()}" value="Guardar Item" />
+								
+								</h:form>
+							</section>
+							
+					</div>
+					</div>
+</body> 
+
+</ui:define>
+
+
+
+
+<ui:define name="FLugares"> 
+
+
+<h:head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<f:metadata>
+		<f:viewParam id="id" name="id" value="#{lugarBean.id}" />
+		<f:viewAction action="#{lugarBean.loadData()}" />
+	</f:metadata>
+</h:head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+	
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Content -->
+			<section id="content" class="main"> <span
+				class="image main"><img src="images/otorongo_Lugares.jpg"
+				alt="" /></span> 
+				
+				<h:form>
+								Codigo<h:inputText value="#{lugarBean.newLugar.codigo}"
+					id="codigotxt" />
+				<h:message for="codigotxt" />
+				<br />
+								Nombre: <h:inputText value="#{lugarBean.newLugar.nombre}"
+					id="nombrentxt" />
+				<h:message for="nombrentxt" />
+				<br />
+								Drecipcion<h:inputText value="#{lugarBean.newLugar.descripcion}"
+					id="descripciontext" />
+				<h:message for="descripciontext" />
+				<br />
+								Longitud <h:inputText value="#{lugarBean.newLugar.longitud}"
+					id="longtxt" />
+				<h:message for="longtxt" />
+				<br />
+								Latitud<h:inputText value="#{lugarBean.newLugar.latitud}"
+					id="lattext" />
+				<h:message for="lattext" />
+				<br />
+				<h:commandButton action="#{lugarBean.guardar()}"
+					value="Guardar Lugar" />
+			
+			
+			<h:dataTable var="_imagen" value="#{lugarBean.newLugar.imagenes}"
+				styleClass="simpletablestyle">
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					<h:inputText value="#{_imagen.nombre}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Descripcion</f:facet>
+					<h:inputText value="#{_imagen.descripcion}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Ruta</f:facet>
+					<h:inputText value="#{_imagen.ruta}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Tipo</f:facet>
+					<h:inputText value="#{_imagen.tipo}" />
+				</h:column>
+				<f:facet name="footer">
+					<h:commandButton action="#{lugarBean.addImagen()}"
+						value="Agregar Imagen">
+						<f:ajax render="@form" execute="@form" />
+					</h:commandButton>
+				</f:facet>
+			</h:dataTable>
+			</h:form> </section>
+			<br/>
+		</div>
+
+	</div>
+
+
+</body>
+
+</ui:define>
+
+<ui:define name="FPersonas"> 
+
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+		<f:metadata>
+		<f:viewParam id="id" name="id" value="#{personaBean.id}" />
+		<f:viewAction action="#{personaBean.loadData()}" />
+	</f:metadata>
+</h:head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+		<h1>Crear Persona</h1>
+		</header>
+		
+		<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/personas.jpg" alt="" /></span>
+								<h:form>
+								Cedula<h:inputText value="#{personaBean.newPersona.cedula}" /><br/>
+								Nombre: <h:inputText value="#{personaBean.newPersona.nombre}" /><br/>
+								Apellido<h:inputText value="#{personaBean.newPersona.apellido}" /><br/>
+								Correo <h:inputText value="#{personaBean.newPersona.correo}" /><br/>
+								Direccion<h:inputText value="#{personaBean.newPersona.direccion}" /><br/>
+								Comentario<h:inputText value="#{personaBean.newPersona.comentario}" /><br/>
+								<h:commandButton action="#{personaBean.guardar()}" value="Guardar Persona" />
+								
+								</h:form>
+							</section>
+							
+					</div>
+					</div>
+</body> 
+</ui:define>
+
+<ui:define name="FVideos"> 
+
+
+<h:head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+		<f:metadata>
+		<f:viewParam id="id" name="id" value="#{videoBean.id}" />
+		<f:viewAction action="#{videoBean.loadData()}" />
+	</f:metadata>
+</h:head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+		<h1>Crear Video</h1>
+		</header>
+		
+		<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/cuenca.jpg" alt="" /></span>
+								<h:form>
+								Codigo<h:inputText value="#{videoBean.newVideo.codigo}" /><br/>
+								Nombre: <h:inputText value="#{videoBean.newVideo.nombre}" /><br/>
+								Drecipcion<h:inputText value="#{videoBean.newVideo.descripcion}" /><br/>
+								ruta <h:inputText value="#{videoBean.newVideo.ruta}" /><br/>
+								<h:commandButton action="#{videoBean.guardar()}" value="Guardar Video" />
+								
+								</h:form>
+							</section>
+							
+					</div>
+					</div>
+
+</body> 
+
+</ui:define>
+
+
+	
+	
+</ui:composition>
+
+<ui:composition template="index.xhtml">
+
+<ui:define>
+
+
+
+
+</ui:define>
+
+</ui:composition>
+</html>

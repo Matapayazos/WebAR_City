@@ -12,6 +12,7 @@ public abstract class Persona_ {
 	public static volatile SingularAttribute<Persona, String> apellido;
 	public static volatile SingularAttribute<Persona, String> correo;
 	public static volatile SingularAttribute<Persona, String> Direccion;
+	public static volatile SingularAttribute<Persona, String> comentario;
 	public static volatile SingularAttribute<Persona, String> nombre;
 
 }

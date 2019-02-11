@@ -16,13 +16,13 @@ import javax.validation.constraints.Size;
 @Entity
 public class Historia {
 	@Id
+	@GeneratedValue
 	private String Codigo;
 	
-	@NotNull
+	
 	private String Nombre;
 	
-	@NotNull
-	@Size(max=100, min=10)
+	
 	private String Descripcion;
 
 	public String getCodigo() {

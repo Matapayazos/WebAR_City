@@ -19,11 +19,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jboss.tools.examples</groupId>
-    <artifactId>Tesis</artifactId>
+    <groupId>ec.edu.ups.ar</groupId>
+    <artifactId>ProyectoCuenca</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>WildFly Quickstarts: Tesis</name>
+    <name>WildFly Quickstarts: ProyectoCuenca</name>
     <description>A starter Java EE 7 webapp project for use on JBoss WildFly / WildFly, generated from the jboss-javaee6-webapp archetype</description>
 
     <url>http://wildfly.org</url>
@@ -84,14 +84,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-        
         </dependencies>
     </dependencyManagement>
-    
-    
-    
-    
-    
 
     <dependencies>
 
@@ -121,18 +115,7 @@
             <artifactId>jaxrs-api</artifactId>
             <scope>provided</scope>
         </dependency>
-		
-		<dependency>
-        <groupId>org.jboss.shrinkwrap</groupId>
-        <artifactId>shrinkwrap-api</artifactId>
-		</dependency>
-		<dependency>
-        <groupId>org.jboss.shrinkwrap</groupId>
-        <artifactId>shrinkwrap-api</artifactId>
-    </dependency>
-    
-    	
-		
+
         <!-- Import the JPA API, we use provided scope as the API is included in 
             JBoss WildFly -->
         <dependency>
@@ -259,17 +242,6 @@
                 </plugins>
             </build>
         </profile>
-        
-<profile>
-        <id>arq-jbossas-managed</id>
-        <dependencies>
-            <dependency>
-                <groupId>org.jboss.as</groupId>
-                <artifactId>jboss-as-arquillian-container-managed</artifactId>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-</profile>
 
         <profile>
 

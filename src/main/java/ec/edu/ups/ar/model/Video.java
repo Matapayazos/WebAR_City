@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
 @Entity
 public class Video {
 	@Id
+	@GeneratedValue
 	private String  Codigo;
 
 	@NotNull

@@ -1,0 +1,203 @@
+<!DOCTYPE html >
+<html
+	lang="en"
+	 xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		background-image: url(fondo.jpg);
+
+
+    <!-- Title -->
+    <title>Administracion</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico"/>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css"/>
+	
+	<f:metadata>
+		<f:viewParam id="id" name="id" value="#{lugarBean.id}" />
+		<f:viewAction action="#{lugarBean.loadData()}" />
+	</f:metadata>
+</head>
+
+<body  > 
+		
+		
+   <div class="contact-form-area mb-70"  >
+                            <h4 class="mb-50">Ingresar Lugar</h4>
+
+                            <h:form action="#" method="post">
+                                <div class="row">
+                                   
+									 <div class="col-lg-6">
+                                        <div class="form-group">
+                                
+                                           Codigo <h:inputText value="#{lugarBean.newLugar.codigo}"	id="codigotxt" type="text" class="form-control" placeholder="codigo"></h:inputText>
+                                        </div>
+                                         
+                                    </div>                                   
+                               
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                
+                                           Nombre Lugar <h:inputText value="#{lugarBean.newLugar.nombre}"	id="nombrentxt" type="text" class="form-control"  placeholder="nombre"></h:inputText>
+                                        </div>
+                                         
+                                    </div>
+                                    
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                          Descripción Lugar <h:inputText  value="#{lugarBean.newLugar.descripcion}" id="descripciontext" type="text" class="form-control" placeholder="descripcion"></h:inputText>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                           Longitud <h:inputText  value="#{lugarBean.newLugar.longitud}" id="longtxt" type="longitud" class="form-control"  placeholder="longitud"></h:inputText>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                           Latitud <h:inputText  value="#{lugarBean.newLugar.latitud}" id="lattext" type="text" class="form-control"  placeholder="latitud"></h:inputText>
+                                        </div>
+                                    </div>
+                               
+                                    <div class="col-12">
+                                       
+                                       <h:commandButton  action="#{lugarBean.guardar()}" value="Guardar Lugar" />
+                                    </div>
+                                </div>
+                                
+                                <h:dataTable 
+				styleClass="simpletablestyle">
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					<h:inputText value="#{_imagen.nombre}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Descripcion</f:facet>
+					<h:inputText value="#{_imagen.descripcion}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Ruta</f:facet>
+					<h:inputText value="#{_imagen.ruta}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Tipo</f:facet>
+					<h:inputText value="#{_imagen.tipo}" />
+				</h:column>
+				<f:facet name="footer">
+					<h:commandButton action="#{lugarBean.addImagen()}"
+						value="Agregar Imagen">
+						<f:ajax render="@form" execute="@form" />
+					</h:commandButton>
+				</f:facet>
+			</h:dataTable>
+                                
+                                
+        </h:form>
+     </div>
+                        
+                        
+             
+             
+             
+     <div class="contact-form-area mb-70" >
+                            <h4 class="mb-50">Ingresar Historia</h4>
+
+                            <h:form action="#" method="post">
+                                <div class="row">
+                                   
+									 <div class="col-lg-6">
+                                        <div class="form-group">
+                                
+                                           Codigo <h:inputText value="#{historiaBean.newHistoria.codigo}" id="codigotxt" type="text" class="form-control" placeholder="codigo"></h:inputText>
+                                        </div>
+                                         
+                                    </div>                                   
+                               
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                
+                                           Título Historia <h:inputText value="#{historiaBean.newHistoria.nombre}" id="Nombretxt" type="text" class="form-control"  placeholder="nombre"></h:inputText>
+                                        </div>
+                                         
+                                    </div>
+                                    
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                          Descripción Historia <h:inputText  value="#{historiaBean.newHistoria.descripcion}" id="descripciontxt" type="text" class="form-control" placeholder="descripcion"></h:inputText>
+                                        </div>
+                                    </div>
+                                    
+                               
+                                    <div class="col-12">
+                                       
+                                       <h:commandButton  action="#{historiaBean.guardar()}" value="Guardar Historia" />
+                                    </div>
+                                </div>
+                                      
+        </h:form>
+     </div>           
+                        
+            
+     
+     
+     
+     
+              
+     <div class="contact-form-area mb-70" >
+                            <h4 class="mb-50">Ingresar Item</h4>
+
+                            <h:form action="#" method="post">
+                                <div class="row">
+                                   
+									 <div class="col-lg-6">
+                                        <div class="form-group">
+                                
+                                           Codigo <h:inputText value="#{itemBean.newItem.codigo}"  id="codtxt" type="text" class="form-control" placeholder="codigo"></h:inputText>
+                                        </div>
+                                         
+                                    </div>                                   
+                               
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                
+                                           Título Item <h:inputText value="#{itemBean.newItem.nombre}" id="nomtxt"  type="text" class="form-control"  placeholder="nombre"></h:inputText>
+                                        </div>
+                                         
+                                    </div>
+                                    
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                          Descripción Item <h:inputText  value="#{itemBean.newItem.descripcion}" id="destxt" type="text" class="form-control" placeholder="descripcion"></h:inputText>
+                                        </div>
+                                    </div>
+                                    
+                               
+                                    <div class="col-12">
+                                       
+                                       <h:commandButton action="#{itemBean.guardar()}" value="Guardar Item" />
+                                    </div>
+                                </div>             
+        </h:form>
+     </div>       
+            
+            
+</body>
+</html>
+
+
+					
+								
